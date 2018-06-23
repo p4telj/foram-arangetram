@@ -1,0 +1,98 @@
+/* GLOBALS */
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600");
+
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
+/* HEADER */
+header {
+	height: 100vh;
+	width: 100vw;
+	display: table;
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: white;
+	text-align: center;
+}
+
+@media (max-height: 799px) {
+	header {
+		background-image: url('../images/ws-header.jpg');
+	}
+}
+
+
+@media (min-height: 800px) {
+	header {
+		background-image: url('../images/sq-header.jpg');
+	}
+}
+
+#header-wrapper {
+	display: table-cell;
+	margin: 0 auto;
+	vertical-align: middle;
+}
+
+#header-text-wrapper {
+	width: 650px;
+	margin: 0 auto;
+}
+
+#header-title {
+	background-color: rgba(0,0,0,0.3);
+	padding: 4px;
+}
+
+#header-title h1 {
+	font-size: 6rem;
+	font-weight: 200;
+	font-variant-caps: all-small-caps;
+}
+
+#header-title h3 {
+	font-weight: 200;
+	padding-bottom: 19px;
+	margin-bottom: 0;
+	letter-spacing: 2px;
+}
+
+#header-nav {
+	background-color: rgba(0,0,0,0.5);
+	text-align: center;
+}
+
+#header-nav ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+#header-nav ul > li {
+	display: inline-block;
+  	padding: 8px 20px;
+}
+
+#header-nav ul > li:hover {
+	background-color: rgba(0,0,0,0.6);
+}
+
+#header-nav ul > li:hover a {
+	color: white;
+	text-decoration: none;
+}
+
+#header-nav ul > li > a {
+	color: white;
+	font-size: 1.1rem;
+	font-weight: 200;
+	letter-spacing: 1px;
+}
+
+/* PEOPLE SECTION */
+#people {
+	height: 100vh;
+}
+
+
+
