@@ -11,12 +11,33 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/slippry/dist/slippry.css" />
         <link rel="stylesheet" href="assets/sidr/dist/stylesheets/jquery.sidr.dark.min.css" />
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/index.css">
 
         <title>Nritya Nipuna</title>
     </head>
 
-    <body> 
+    <body class="hide-until-ready">
+
+        <div id="collapsed-nav" style="display: none;">
+            <ul>
+                <li><a href="#people"><i class="fas fa-graduation-cap"></i>&nbsp;Guru & Shishyas</a></li>
+                <li><a href="#program"><i class="far fa-newspaper"></i>&nbsp;Brochure</a></li>
+                <li><a href="#pictures"><i class="far fa-images"></i>&nbsp;Pictures</a></li>
+                <li><a href="#videos"><i class="fab fa-youtube"></i>&nbsp;Videos</a></li>
+            </ul>
+        </div>
+
+
+        <div id="collapsed-sidebar">
+            <div class="ic">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="ti">
+                <h1>Nritya Nipuna</h1>
+            </div>
+        </div>
+
 
         <header id="header">
             <div id="header-wrapper">
@@ -38,37 +59,39 @@
         </header>
 
         <section id="people">
-            <div id="people-title">
+            <div id="people-title" data-aos="fade-up">
                 <h1>Guru & Shishyas</h1>
             </div>
-            <div class="row">
-                <div class="col-sm-12 col-lg-4">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/images/card-foram.jpg" alt="Foram Patel">
-                        <div class="card-body">
-                            <h5 class="card-title">Foram Patel</h5>
-                            <p class="card-text">A shishya of Jasmine Shah, Foram is a rising junior at Chelmsford High School.</p>
-                            <a href="#foram" class="btn btn-primary">Read More</a>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-4">
+                        <div data-aos="flip-right" data-aos-duration="1000" class="card">
+                            <img class="card-img-top" src="assets/images/card-foram.jpg" alt="Foram Patel">
+                            <div class="card-body">
+                                <h5 class="card-title">Foram Patel</h5>
+                                <p class="card-text">A shishya of Jasmine Shah, Foram is a rising junior at Chelmsford High School.</p>
+                                <a href="#foram" class="btn btn-primary">Read More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-12 col-lg-4">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/images/card-jasmine.jpg" alt="Jasmine Shah">
-                        <div class="card-body">
-                            <h5 class="card-title">Jasmine Shah</h5>
-                            <p class="card-text">A guru to Foram and Juhi, Jasmine Shah has run Aangikam Dance Academy for many years.</p>
-                            <a href="#guru" class="btn btn-primary">Read More</a>
+                    <div class="col-sm-12 col-lg-4">
+                        <div data-aos="flip-right" data-aos-duration="1000" class="card">
+                            <img class="card-img-top" src="assets/images/card-jasmine.jpg" alt="Jasmine Shah">
+                            <div class="card-body">
+                                <h5 class="card-title">Jasmine Shah</h5>
+                                <p class="card-text">A guru to Foram and Juhi, Jasmine Shah has run Aangikam Dance Academy for many years.</p>
+                                <a href="#guru" class="btn btn-primary">Read More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-12 col-lg-4">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/images/card-juhi.jpg" alt="Juhi Lalwani">
-                        <div class="card-body">
-                            <h5 class="card-title">Juhi Lalwani</h5>
-                            <p class="card-text">A shishya of Jasmine Shah, Juhi is a rising junior at Chelmsford High School.</p>
-                            <a href="#juhi" class="btn btn-primary">Read More</a>
+                    <div class="col-sm-12 col-lg-4">
+                        <div data-aos="flip-right" data-aos-duration="1000" class="card">
+                            <img class="card-img-top" src="assets/images/card-juhi.jpg" alt="Juhi Lalwani">
+                            <div class="card-body">
+                                <h5 class="card-title">Juhi Lalwani</h5>
+                                <p class="card-text">A shishya of Jasmine Shah, Juhi is a rising junior at Chelmsford High School.</p>
+                                <a href="#juhi" class="btn btn-primary">Read More</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -77,7 +100,7 @@
         </section>
 
         <section id="program">
-            <h1>Program Brochure&nbsp;&nbsp;<a class="brochure-dl-link" href="assets/images/brochure.pdf" download><i class="fas fa-cloud-download-alt brochure-dl"></i>
+            <h1 data-aos="fade-up">Program Brochure&nbsp;&nbsp;<a class="brochure-dl-link" href="assets/images/brochure.pdf" download><i class="fas fa-download brochure-dl"></i>
             </a></h1>
             <ul id="brochure-carousel">
                 <li>
@@ -102,25 +125,29 @@
         </section>
 
         <section id="pictures">
-            <h1>Photo Gallery</h1>
+            <h1 data-aos="fade-up">Photo Gallery</h1>
             <ul id="pictures-carousel">
                 <li>
                     <img src="assets/images/gallery-1.jpg" alt="04/01/2018 Photoshoot | Foram & Juhi">
                 </li>
                 <li>
-                    <img src="assets/images/gallery-2.jpg" alt="04/01/2018 Photoshoot | Foram">
+                    <img id="gallery-2-lg" src="assets/images/gallery-2-lg.jpg" alt="04/01/2018 Photoshoot | Foram">
+                    <img id="gallery-2-sm" src="assets/images/gallery-2-sm.jpg" alt="04/01/2018 Photoshoot | Foram">
                 </li>
                 <li>
-                    <img src="assets/images/gallery-3.jpg" alt="04/01/2018 Photoshoot | Juhi">
+                    <img id="gallery-3-lg" src="assets/images/gallery-3-lg.jpg" alt="04/01/2018 Photoshoot | Juhi">
+                    <img id="gallery-3-sm" src="assets/images/gallery-3-sm.jpg" alt="04/01/2018 Photoshoot | Juhi">
                 </li>
                 <li>
-                    <img src="assets/images/gallery-4.jpg" alt="04/01/2018 Photoshoot | Foram">
+                    <img id="gallery-4-lg" src="assets/images/gallery-4-lg.jpg" alt="04/01/2018 Photoshoot | Foram">
+                    <img id="gallery-4-sm" src="assets/images/gallery-4-sm.jpg" alt="04/01/2018 Photoshoot | Foram">
                 </li>
                 <li>
                     <img src="assets/images/gallery-5.jpg" alt="04/01/2018 Photoshoot | Juhi">
                 </li>
                 <li>
-                    <img src="assets/images/gallery-6.jpg" alt="04/01/2018 Photoshoot | Foram">
+                    <img id="gallery-6-sm" src="assets/images/gallery-6-sm.jpg" alt="04/01/2018 Photoshoot | Foram">
+                    <img id="gallery-6-lg" src="assets/images/gallery-6-lg.jpg" alt="04/01/2018 Photoshoot | Foram">
                 </li>
                 <li>
                     <img src="assets/images/gallery-7.jpg" alt="04/01/2018 Photoshoot | Juhi">
@@ -159,22 +186,26 @@
                     <img src="assets/images/gallery-18.jpg" alt="04/01/2018 Photoshoot | Foram">
                 </li>
                 <li>
-                    <img src="assets/images/gallery-19.jpg" alt="04/01/2018 Photoshoot | Foram & Juhi">
+                    <img id="gallery-19-lg" src="assets/images/gallery-19-lg.jpg" alt="04/01/2018 Photoshoot | Foram & Juhi">
+                    <img id="gallery-19-sm" src="assets/images/gallery-19-sm.jpg" alt="04/01/2018 Photoshoot | Foram & Juhi">
                 </li>
                 <li>
                     <img src="assets/images/gallery-20.jpg" alt="04/01/2018 Photoshoot | Foram & Juhi">
                 </li>
                 <li>
-                    <img src="assets/images/gallery-21.jpg" alt="04/01/2018 Photoshoot | Juhi & Family">
+                    <img id="gallery-21-sm" src="assets/images/gallery-21-sm.jpg" alt="04/01/2018 Photoshoot | Juhi & Family">
+                    <img id="gallery-21-lg" src="assets/images/gallery-21-lg.jpg" alt="04/01/2018 Photoshoot | Juhi & Family">
                 </li>
                 <li>
-                    <img src="assets/images/gallery-22.jpg" alt="04/01/2018 Photoshoot | Juhi">
+                    <img id="gallery-22-lg" src="assets/images/gallery-22-lg.jpg" alt="04/01/2018 Photoshoot | Juhi">
+                    <img id="gallery-22-sm" src="assets/images/gallery-22-sm.jpg" alt="04/01/2018 Photoshoot | Juhi">
                 </li>
                 <li>
                     <img src="assets/images/gallery-23.jpg" alt="04/01/2018 Photoshoot | Juhi">
                 </li>
                 <li>
-                    <img src="assets/images/gallery-24.jpg" alt="04/01/2018 Photoshoot | Juhi & Foram">
+                    <img id="gallery-24-lg" src="assets/images/gallery-24-lg.jpg" alt="04/01/2018 Photoshoot | Juhi & Foram">
+                    <img id="gallery-24-sm" src="assets/images/gallery-24-sm.jpg" alt="04/01/2018 Photoshoot | Juhi & Foram">
                 </li>
                 <li>
                     <img src="assets/images/gallery-25.jpg" alt="04/01/2018 Photoshoot | Juhi & Sister (Garima)">
@@ -184,7 +215,7 @@
 
         <section id="videos">
             <div id="videos-title">
-                <h1>Video Gallery</h1>
+                <h1 data-aos="fade-up">Video Gallery</h1>
                 <button>Select</button>
                 <h2>Channa Mereya x Happier selected.</h2>
             </div>
@@ -211,19 +242,19 @@
         <section id="foram">
             <img class="about-bg-pic" src="assets/images/foram-bg.jpg">
             <div class="about-content">
-                <div class="about-title">
+                <div data-aos="fade-left" class="about-title">
                     <h1>Foram Patel | Shishya</h1>
                 </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
-                            <p>
+                            <p data-aos="fade-up">
                             Foram is a rising junior at Chelmsford High School. She is an active member of many clubs at her school such as Speech and Debate and Key Club (Community Service). She is a graduate and now a volunteer of Shishu Bharati, Indian School of Culture and Language. <br><br>Dance has been an integral part of her life since first grade, and even today among tough courses she maintains her passion and love for it. Her guru, smt. Jasmine Shah has had a tremendous influence on her, being not only her mentor, but also one of her greatest supporters throughout the years. Through her guru, Foram has learned many valuable lessons such as patience, dedication, confidence, and an appreciation for the art of dance. <br><br>When she is not creating original choreography in her free time, Foram loves to draw and bake.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid about-quote">
+                <div data-aos="fade-right" class="container-fluid about-quote">
                     <p>"Dance has changed my life..." - Foram</p>
                 </div>
             </div>
@@ -231,19 +262,19 @@
         <section id="juhi">
             <img class="about-bg-pic" src="assets/images/juhi-bg.jpg">
             <div class="about-content">
-                <div class="about-title">
+                <div data-aos="fade-right" class="about-title">
                     <h1>Juhi Lalwani | Shishya</h1>
                 </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
-                            <p>
+                            <p data-aos="fade-up">
                             Juhi is a rising junior at Chelmsford High School. Starting from the age of 5, Juhi began her dancing journey, and she has been learning dance under the guidance of her guru, Smt. Jasmine Shah. Over the past 10 years, Jasmine Shah has not only grown Juhi’s passion for dance but also instilled a greater appreciation for her Indian heritage, religion and culture. <br><br>Juhi has brought her passion of dance to the stage at various events and competitions in the New England area, such as Gurjar, IAGB, IANH, Swaraag, and many more. Along with dancing, singing is another one of Juhi’s passions, and she has won several Bollywood singing competitions in the area. <br><br>Juhi is also a dedicated member of Chelmsford High School’s all-female accapella group, The Crescendos. In addition, Juhi volunteers at Shishu Bharati, sharing her love for Indian culture and language with young children. 
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid about-quote">
+                <div data-aos="fade-left" class="container-fluid about-quote">
                     <p>"Dance has changed my life..." - Juhi</p>
                 </div>
         </section>
@@ -251,32 +282,37 @@
         <section id="guru">
             <img class="about-bg-pic" src="assets/images/guru-bg.jpg">
             <div class="about-content">
-                <div class="about-title">
+                <div data-aos="fade-down" class="about-title">
                     <h1>Jasmine Shah | Guru</h1>
                 </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
-                            <p>
+                            <p data-aos="fade-up">
                             Jasmine Shah is a highly accomplished dancer of Bharatanatyam, Manipuri, and Folk dances from several regions of India, under the guidance of Shri S.K. Rao, Shri Arjun Desai, and Smt. Niranjana Bhargav. She founded Aangikam Dance Academy in 1982 and has personally trained over 2,000 students since then. She is famous for her innovative style and grace, and her name has become synonymous to dance itself.<br><br>
                             Jasmine Shah and her students have been a part of many charities, fundraisers, competitions, and annual shows. She currently volunteers at Shishu Bharati, the Indian School of Langauge and Culture, to educate young children about their Indian heritage. <br><br>Her relentless efforts to promote Indian Culture have been recognized in North America. She has earned the designation of Roster of New England Council of Arts and has also been recognized as Woman of the Year for New England. Most recently, for her contribution to Indian culture, Jasmine Shah received the prestigious "Lifetime Achievement Award" in 2016 from India New England News.
                             </p>
                         </div>
                     </div>
                 </div>
+                <div id="thank-you" data-aos="fade-up">
+                    <h1>Thank you.</h1>
+                </div>
             </div>
+
         </section>
 
         <footer id="footer">
-            <p>Nritya Nipuna | Developed by Jimil Patel</p>
+            <p>Nritya Nipuna | Designed by Jimil Patel</p>
         </footer>
-
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/jquery.touchswipe/1.6.15/jquery.touchSwipe.min.js"></script>
         <script src="assets/slippry/dist/slippry.min.js"></script>
         <script src="assets/sidr/dist/jquery.sidr.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="assets/js/main.js"></script>
+
     </body>
 </html>

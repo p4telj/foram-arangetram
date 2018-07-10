@@ -3,17 +3,20 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600");
 
 
+/* does not support < 290px */
+
 
 body {
 	font-family: 'Roboto', sans-serif;
 	width: 100%;
 	max-width: 100%;
-	overflow-x: hidden;
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-image: url('../images/header-ws.jpg');
+	overflow: auto;
+	overflow-x: hidden;
 
 }
 
@@ -29,6 +32,15 @@ body {
 		background-image: url('../images/header-sq.jpg');
 	}
 }
+
+
+
+
+
+
+
+
+
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Raleway', sans-serif;
@@ -114,6 +126,7 @@ header {
 	background: -webkit-linear-gradient(to right, #FFC837, #FF8008);
 	background: linear-gradient(to right, #FFC837, #FF8008);
 	padding-bottom: 26px;
+	width: 100%;
 }
 
 #people-title {
@@ -133,10 +146,17 @@ header {
 	margin-top: 25px;
 	width: 18rem;
 	border: none;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #people .card img {
 	height: 286px;
+}
+
+#people .card-body a:hover {
+	background-color: #ff9f1c;
+	border-color: #ff9f1c;
+	color: #a12a12;
 }
 
 #people .row {
@@ -161,6 +181,7 @@ header {
 	text-align: center;
 	background-color: rgba(0,0,0,0.5);
 	padding-bottom: 40px;
+	width: 100%;
 }
 
 .brochure-dl-link:hover .brochure-dl {
@@ -198,6 +219,7 @@ header {
 	background-color: black;
 	text-align: center;
 	padding-bottom: 50px;
+	width: 100%;
 }
 
 #pictures h1 {
@@ -214,6 +236,58 @@ header {
 	margin: 0 auto;
 }
 
+
+#gallery-2-sm,
+#gallery-3-sm,
+#gallery-4-sm,
+#gallery-6-sm,
+#gallery-19-sm,
+#gallery-21-sm,
+#gallery-22-sm,
+#gallery-24-sm { 
+	display: none; 
+}
+
+#gallery-2-lg,
+#gallery-3-lg,
+#gallery-4-lg,
+#gallery-6-lg,
+#gallery-19-lg,
+#gallery-21-lg,
+#gallery-22-lg,
+#gallery-24-lg { 
+	display: block; 
+}
+
+@media (max-width: 425px) {
+	#pictures img {
+		height: initial;
+		width: 100%;
+	}
+
+	#gallery-2-sm,
+	#gallery-3-sm,
+	#gallery-4-sm,
+	#gallery-6-sm,
+	#gallery-19-sm,
+	#gallery-21-sm,
+	#gallery-22-sm,
+	#gallery-24-sm { 
+		display: block; 
+	}
+
+	#gallery-2-lg,
+	#gallery-3-lg,
+	#gallery-4-lg,
+	#gallery-6-lg,
+	#gallery-19-lg,
+	#gallery-21-lg,
+	#gallery-22-lg,
+	#gallery-24-lg { 
+		display: none; 
+}
+}
+
 #pictures .sy-pager li.sy-active a {
 	background-color: #fea503;
 }
@@ -222,6 +296,7 @@ header {
 #videos {
 	background-image: linear-gradient(to left top, #fea503, #eb8508, #d4660e, #bc4811, #a12a12);
 	text-align: center;
+	width: 100%;
 }
 
 #videos-title {
@@ -264,35 +339,45 @@ header {
 	font-weight: 200;
 	font-size: 1.2em;
 	display: inline-block;
+	padding-top: 15px;
 }
 
 #videos-sidebar {
 	display: none;
 }
 
-#videos-sidr {
+#videos-sidr, 
+#main-sidr {
 	background-color: rgba(0,0,0,0.7);
 	box-shadow: 0 0 0 0;
 	text-align: center;
 }
 
-#videos-sidr ul, #videos-sidr li, #videos-sidr li:hover>a {
+#videos-sidr ul, 
+#videos-sidr li, 
+#videos-sidr li:hover>a,
+#main-sidr ul,
+#main-sidr li,
+#main-sidr li:hover>a {
 	border-bottom: none;
 	border-top: none;
 	box-shadow: 0 0 0 0;
 }
 
-#videos-sidr li:hover>a {
+#videos-sidr li:hover>a,
+#main-sidr li:hover>a {
 	color: #a12a12;
 	cursor: pointer;
 }
 
-#videos-sidr li {
+#videos-sidr li,
+#main-sidr li {
 	padding-bottom: 5px;
 	line-height: 35px;
 }
 
-#videos-sidr ul {
+#videos-sidr ul,
+#main-sidr ul{
 	padding-left: 10px;
 	text-align: left;
 }
@@ -311,33 +396,60 @@ header {
 }
 
 #videos iframe {
-	width: 80vh;
-	height: 50vh;
+	width: 80%;
+	height: 65vh;
 	padding-bottom: 60px;
 }
 
 /*ABOUT SECTION*/
 
 #foram {
-	height: 35em;
+	height: 55em;
 	position: relative;
 	background-color: black;
+	width: 100%;
 }
 
 #juhi {
-	height: 40rem;
+	height: 60rem;
 	position: relative;
 	background-color: black;
+	width: 100%;
 }
 
 #guru {
-	height: 35rem;
+	height: 60em;
 	position: relative;
 	background-color: black;
+	width: 100%;
+}
+
+@media (min-width: 812px) {
+	#guru {
+		height: 100%;
+	}
+}
+
+@media (max-width: 360px) {
+	#guru {
+		height: 70em;
+	}
+}
+
+#thank-you { display: none; text-align: center; padding-top: 10%; padding-bottom: 10%; }
+#thank-you h1 {
+	color: white;
+	font-weight: 200;
+}
+
+@media (min-width: 600px) {
+	#thank-you {
+		display: block;
+	}
 }
 
 .about-bg-pic {
-	height: 100%;
+	width: 100%;
 	margin: 0 auto;
 	display: block;
 }
@@ -346,6 +458,14 @@ header {
 	text-align: center;
 	padding-top: 50px;
 	padding-bottom: 25px;
+}
+
+.about-content > .container {
+	padding-top: 22%;
+}
+
+#juhi .about-content > .container {
+	padding-top: 28%;
 }
 
 .about-content {
@@ -368,6 +488,8 @@ header {
 
 .about-content p {
 	color: white;
+	font-weight: 100;
+	letter-spacing: 0.7px;
 }
 
 .about-quote {
@@ -388,23 +510,61 @@ header {
 
 /*FOOTER*/
 footer {
-	background-color: #57002d;
+	background-color: black;
+	width: 100%;
+	text-align: center;
+	padding-bottom: 50px;
 }
 
 footer p {
+	background-color: rgba(0,0,0,0.08);
 	padding-left: 10px;
 	color: white;
-	margin-bottom: 0;
-	padding-top: 3px;
-	padding-bottom: 3px;
+
 	font-weight: 200;
+	font-size: 1em;
+	font-family: 'Raleway';
 }
 
+
+
+
+#collapsed-sidebar {
+
+    position: fixed;
+    z-index: 99999;
+    background-color: rgba(0,0,0,0.7);
+    display: block;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    color: white;
+    /*animation: expandline 1s, visibl 1s;*/
+}
+
+
 /*RESPONSIVE*/
+@media(max-width: 350px) {
+	#foram { height: 66em; }
+	#juhi { height: 73em; }
+}
 
 @media(max-width: 650px) {
 	#header-text-wrapper {
 		display: none;
+	}
+	#collapsed-sidebar {
+		opacity: 1;
+		width: 100%;
+		left: 0;
+	}
+	.sy-caption-wrap {
+		visibility: hidden;
+	}
+	.sy-pager li { visibility: hidden; }
+	#program img {
+		width: 100% !important;
+		height: initial;
 	}
 }
 
@@ -412,4 +572,37 @@ footer p {
 	#header-text-wrapper {
 		display: inline-block;
 	}
+	#collapsed-sidebar {
+		opacity: 0;
+		width: 43%;
+		left: 28%;
+	}
+}
+
+
+.hide-until-ready {
+	display: none;
+}
+
+
+#collapsed-sidebar div {
+    display: inline-block;
+}
+
+.ic { position: absolute; left: 20px; }
+
+#collapsed-sidebar i {
+    vertical-align: middle;
+    padding-bottom: 27px;
+    padding-top: 22px;
+}
+
+#collapsed-sidebar h1 {
+    font-weight: 300;
+    font-size: 2.7em;
+    font-variant-caps: all-petite-caps;
+}
+
+#main-sidr ul {
+	padding-top: 15px;
 }
