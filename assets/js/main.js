@@ -1,5 +1,43 @@
 $(function() {
 	$('.hide-until-ready').removeClass('hide-until-ready');
+
+$(window).on('scroll', function() {
+	if (document.documentElement.offsetWidth <= 650) {
+		$('#collapsed-sidebar').css('opacity', '1').css('left', '0').width($('body').width());
+	}
+	// console.log(document.documentElement.offsetWidth);
+	if (document.documentElement.offsetWidth > 650) {
+		var scroll_offset = $(document).scrollTop();
+		var passed = (last_scroll > nav_offset & scroll_offset < nav_offset) | (last_scroll < nav_offset & scroll_offset > nav_offset);
+		last_scroll = scroll_offset;
+		// console.log('scroll: ' + scroll_offset.toString());
+		// console.log('nav: ' + nav_offset.toString());
+		if (passed & scroll_offset < nav_offset) { 
+			$('#collapsed-sidebar').animate({
+	         	opacity: '0'
+			}, function() {
+				$('#collapsed-sidebar').css({
+					width: '43%',
+					left: '28%'
+				})
+			});
+
+
+		}
+		if (passed & scroll_offset > nav_offset) {
+	         $('#collapsed-sidebar').animate({
+	         	width: $('body').width(),
+	         	left: '0',
+	         	opacity: '1'
+			});
+		}
+	}
+});
+
+
+
+
+	
 	// animate on scroll
 	AOS.init();
 
@@ -36,7 +74,7 @@ $(function() {
 	});
 
 	// responsiveness
-	
+
 	$(window).on('resize', function() {
 		var docWidth = document.documentElement.offsetWidth;
 
@@ -53,38 +91,7 @@ $(function() {
 	var nav_offset = $('#header-nav').offset().top;
 	var last_scroll = $(document).scrollTop();
 
-$(window).on('scroll', function() {
-	if (document.documentElement.offsetWidth <= 650) {
-		$('#collapsed-sidebar').css('opacity', '1').css('left', '0').width($('body').width());
-	}
-	// console.log(document.documentElement.offsetWidth);
-	if (document.documentElement.offsetWidth > 650) {
-		var scroll_offset = $(document).scrollTop();
-		var passed = (last_scroll > nav_offset & scroll_offset < nav_offset) | (last_scroll < nav_offset & scroll_offset > nav_offset);
-		last_scroll = scroll_offset;
-		// console.log('scroll: ' + scroll_offset.toString());
-		// console.log('nav: ' + nav_offset.toString());
-		if (passed & scroll_offset < nav_offset) { 
-			$('#collapsed-sidebar').animate({
-	         	opacity: '0'
-			}, function() {
-				$('#collapsed-sidebar').css({
-					width: '43%',
-					left: '28%'
-				})
-			});
 
-
-		}
-		if (passed & scroll_offset > nav_offset) {
-	         $('#collapsed-sidebar').animate({
-	         	width: $('body').width(),
-	         	left: '0',
-	         	opacity: '1'
-			});
-		}
-	}
-});
 
 $('#collapsed-sidebar').sidr({
 	name: 'main-sidr',

@@ -14,7 +14,7 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-image: url('../images/header-ws.jpg');
+	background-image: url('../images/backgrounds/header-ws.jpg');
 	overflow: auto;
 	overflow-x: hidden;
 
@@ -22,24 +22,16 @@ body {
 
 @media (max-height: 799px) {
 	body {
-		background-image: url('../images/header-ws.jpg');
+		background-image: url('../images/backgrounds/header-ws.jpg');
 	}
 }
 
 
 @media (min-height: 800px) {
 	body {
-		background-image: url('../images/header-sq.jpg');
+		background-image: url('../images/backgrounds/header-sq.jpg');
 	}
 }
-
-
-
-
-
-
-
-
 
 
 h1, h2, h3, h4, h5, h6 {
