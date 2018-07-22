@@ -1,5 +1,0 @@
-todo:
-
-1) add every component of the website back and make it work with mobile
-2) smooth scrolling
-3) better lazy loading?
