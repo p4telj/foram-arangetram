@@ -49,6 +49,39 @@ function initLazyLoading() {
 		};
 	});
 
+	// if links clicked, prioritize lazy loading.
+	$.each($('a'), function() {
+		if (this.hash == '#program') {
+			$(this).on('click', function() {
+				[].forEach.call(document.querySelectorAll('img[data-brochure-src]'), function(img) {
+					img.setAttribute('src', img.getAttribute('data-brochure-src'));
+					img.onload = function() {
+						img.removeAttribute('data-brochure-src');
+					};
+				});
+			});
+		} else if (this.hash == '#pictures') {
+			$(this).on('click', function() {
+				[].forEach.call(document.querySelectorAll('img[data-gallery-src]'), function(img) {
+					img.setAttribute('src', img.getAttribute('data-gallery-src'));
+					img.onload = function() {
+						img.removeAttribute('data-gallery-src');
+					};
+				});
+				$('#pictures-title').find('i').css('transition', 'opacity 5s').css('opacity', '0');
+			});
+		} else if (this.hash == '#foram' | this.hash == '#juhi' | this.hash == '#guru') {
+			$(this).on('click', function() {
+				[].forEach.call(document.querySelectorAll('img[data-about-src]'), function(img) {
+					img.setAttribute('src', img.getAttribute('data-about-src'));
+					img.onload = function() {
+						img.removeAttribute('data-about-src');
+					};
+				});
+			});
+		}
+	});
+
 	var brochureWaypoint = new Waypoint({
 		element: document.getElementById('people-title'),
 		handler: function(direction) {
