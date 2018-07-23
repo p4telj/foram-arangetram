@@ -588,7 +588,7 @@ header {
 .about {
 	position: relative;
 	width: 100%;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 .about-title {
@@ -679,7 +679,6 @@ header {
 }
 
 .about-quote {
-	margin-top: 34px;
 	text-align: center;
 }
 
