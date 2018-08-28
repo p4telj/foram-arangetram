@@ -28,7 +28,6 @@ $(function() {
 	// GENERAL FEATURES (CONTINUED)
 	// added after other features initialized
 	anchorLinkSmoothScroll();
-	// animationHandler();
 });
 
 ////////////////////////
@@ -41,20 +40,34 @@ function initSmoothScrolling() {
 	  });
 }
 
+var initialized = false;
+function animateIfPossible(selectors) {
+	if (initialized) { return false; }
+	let ctr = 0;
+	for (let i = 0; i < selectors.length; ++i) {
+		ctr += document.querySelectorAll(selectors[i]).length;
+	}
+	if (ctr == 0) { animationHandler(); initialized = true; }
+	return initialized;
+}
+
+
 function initLazyLoading() {
-	// [].forEach.call(document.querySelectorAll('img[data-src]'), function(img) {
-	// 	img.setAttribute('src', img.getAttribute('data-src'));
-	// 	img.onload = function() {
-	// 		img.removeAttribute('data-src');
-	// 	};
-	// });
+	selectors = [
+		'img[data-about-src]',
+		'img[data-brochure-src]',
+		'img[data-gallery-src]',
+	];
 
 	[].forEach.call(document.querySelectorAll('img[data-about-src]'), function(img) {
 		img.setAttribute('src', img.getAttribute('data-about-src'));
 		img.onload = function() {
 			img.removeAttribute('data-about-src');
 		};
+		
 	});
+	animateIfPossible(selectors);
+
 
 	// if links clicked, prioritize lazy loading.
 	$.each($('a'), function() {
@@ -67,6 +80,7 @@ function initLazyLoading() {
 					};
 				});
 			});
+			animateIfPossible(selectors);
 		} else if (this.hash == '#pictures') {
 			$(this).on('click', function() {
 				[].forEach.call(document.querySelectorAll('img[data-gallery-src]'), function(img) {
@@ -77,6 +91,7 @@ function initLazyLoading() {
 				});
 				$('#pictures-title').find('i').css('transition', 'opacity 5s').css('opacity', '0');
 			});
+			animateIfPossible(selectors);
 		}
 	});
 
@@ -90,6 +105,7 @@ function initLazyLoading() {
 						img.removeAttribute('data-brochure-src');
 					};
 				});
+				animateIfPossible(selectors);
 			// }
 		}
 	});
@@ -105,6 +121,7 @@ function initLazyLoading() {
 					};
 				});
 				$('#pictures-title').find('i').css('transition', 'opacity 5s').css('opacity', '0');
+				animateIfPossible(selectors);
 			// }
 		}
 	});
@@ -119,6 +136,7 @@ function initLazyLoading() {
 						img.removeAttribute('data-about-src');
 					};
 				});
+				animateIfPossible(selectors);
 			// }
 		}
 	})
