@@ -28,7 +28,7 @@ $(function() {
 	// GENERAL FEATURES (CONTINUED)
 	// added after other features initialized
 	anchorLinkSmoothScroll();
-	animationHandler();
+	// animationHandler();
 });
 
 ////////////////////////
@@ -42,10 +42,17 @@ function initSmoothScrolling() {
 }
 
 function initLazyLoading() {
-	[].forEach.call(document.querySelectorAll('img[data-src]'), function(img) {
-		img.setAttribute('src', img.getAttribute('data-src'));
+	// [].forEach.call(document.querySelectorAll('img[data-src]'), function(img) {
+	// 	img.setAttribute('src', img.getAttribute('data-src'));
+	// 	img.onload = function() {
+	// 		img.removeAttribute('data-src');
+	// 	};
+	// });
+
+	[].forEach.call(document.querySelectorAll('img[data-about-src]'), function(img) {
+		img.setAttribute('src', img.getAttribute('data-about-src'));
 		img.onload = function() {
-			img.removeAttribute('data-src');
+			img.removeAttribute('data-about-src');
 		};
 	});
 
@@ -69,15 +76,6 @@ function initLazyLoading() {
 					};
 				});
 				$('#pictures-title').find('i').css('transition', 'opacity 5s').css('opacity', '0');
-			});
-		} else if (this.hash == '#foram' | this.hash == '#juhi' | this.hash == '#guru') {
-			$(this).on('click', function() {
-				[].forEach.call(document.querySelectorAll('img[data-about-src]'), function(img) {
-					img.setAttribute('src', img.getAttribute('data-about-src'));
-					img.onload = function() {
-						img.removeAttribute('data-about-src');
-					};
-				});
 			});
 		}
 	});
@@ -355,6 +353,8 @@ function initVideoSidebar() {
 			}
 		},
 		renaming: false
+	}).off().on('click', function() {
+		$.sidr('open', 'videos-sidr');
 	});
 
     $('#videos-sidr li').off().on('click', function() {
@@ -453,4 +453,42 @@ function initPicturesCarousel() {
 	$(window).on('resize', function() {
 		carousel.refresh();
 	})
+}
+
+// UTILITIES
+
+// left: 37, up: 38, right: 39, down: 40,
+// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+function preventDefault(e) {
+  e = e || window.event;
+  if (e.preventDefault)
+      e.preventDefault();
+  e.returnValue = false;  
+}
+
+function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
+}
+
+function disableScroll() {
+  if (window.addEventListener) // older FF
+      window.addEventListener('DOMMouseScroll', preventDefault, false);
+  window.onwheel = preventDefault; // modern standard
+  window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+  window.ontouchmove  = preventDefault; // mobile
+  document.onkeydown  = preventDefaultForScrollKeys;
+}
+
+function enableScroll() {
+    if (window.removeEventListener)
+        window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.onmousewheel = document.onmousewheel = null; 
+    window.onwheel = null; 
+    window.ontouchmove = null;  
+    document.onkeydown = null;  
 }

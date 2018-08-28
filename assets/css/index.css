@@ -596,6 +596,8 @@ header {
 	text-align: center;
 	padding-top: 50px;
 	padding-bottom: 25px;
+	position: absolute;
+	width: 100%;
 }
 
 .about-bg-layer {
@@ -700,7 +702,7 @@ footer {
 	width: 100%;
 	text-align: center;
 	padding-bottom: 51px;
-	margin-top: 40px;
+	padding-top: 40px;
 	color: white;
 }
 

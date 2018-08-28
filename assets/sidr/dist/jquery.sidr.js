@@ -343,7 +343,7 @@
         sidrStatus.moving = true;
 
         this.prepareBody(action);
-        this.moveBody(action);
+        // this.moveBody(action); // JIMIL: commented this out because it scrolls to top of page on menu open
         this.moveMenu(action, callback);
       }
     }, {
